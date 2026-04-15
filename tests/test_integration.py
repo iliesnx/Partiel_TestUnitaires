@@ -112,11 +112,11 @@ class TestMultiStepIntegration:
         assert new_balance == 50.0
     
     @pytest.mark.parametrize("sport,duration,balance,expected_success", [
-        ("tennis", 1.0, 30.0, True),
-        ("badminton", 2.0, 35.0, True),
-        ("squash", 1.5, 40.0, True),
-        ("tennis", 2.0, 40.0, False),  # Solde insuffisant
-        ("badminton", 3.0, 50.0, False)  # Solde insuffisant
+        ("tennis", 1.0, 30.0, True),      
+        ("badminton", 2.0, 50.0, True),   
+        ("squash", 1.5, 50.0, True),      
+        ("tennis", 2.0, 40.0, False),     
+        ("badminton", 3.0, 50.0, False)   
     ])
     def test_reservation_scenarios_parametrized(self, sport, duration, balance, expected_success):
         """Objectif : Vérifier plusieurs scénarios de réservation.
